@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>小说读本</title>
+   <!-- <link rel="icon" type="image/vnd.microsoft.icon" href="http://www.ireader.com/favicon.ico"> -->
+    <link type="text/css" rel="stylesheet" href="./css/2db/global.css">
+    <!-- <link type="text/css" rel="stylesheet" href="./css/base.css"> -->
+    <script src="./js/2db/push.js"></script>
+    <!-- <script src="./js/2db/hm.js"></script> -->
+    <script type="text/javascript" src="./js/2db/jquery.js"></script>
+    <script type="text/javascript" src="./js/2db/jquery.lazyload.min.js"></script>
+    <script type="text/javascript" src="./js/2db/zypc.js"></script>
+    <link rel="stylesheet" href="./css/2db/layer.css" id="layui_layer_skinlayercss" style=""></head>
+    <link type="text/css" rel="stylesheet" href="./css/2db/sjxqy.css">
+    <link type="text/css" rel="stylesheet" href="./css/2db/common.css">
+<body>
+<script type="text/javascript">var USER_IS_LOGIN = 0;</script>
+<style>::-ms-clear, ::-ms-reveal{display: none;}</style><!--ie x号-->
+
+<!--公共头部 开始-->
+<div class="blankHead zwfl_head">
+    <div class="n1_header" style="box-shadow: none;">
+        <div class="n1_header_wrap">
+            <h1>
+                <a href="http://www.ireader.com/index.php?ca=channel.index&amp;pca=bookdetail.index"><img src="./images/2db/logo.jpg" alt="logo" title="树阅"></a>
+                <p>树阅</p>
+            </h1>
+            <div class="n1_headerR">
+                <ul class="n1_nav">
+                    <li><a href="sy.html">首页</a></li>
+                    <!-- <li><a href="">分类</a></li>
+                    <li><a href="">排行</a></li> -->
+                    <!--
+                    <li><a href="javascript:;">出版</a></li>
+                    <li><a href="javascript:;">男生</a></li>
+                    <li><a href="javascript:;">女生</a></li>
+                    -->
+                    <!-- <li><a href="">征文大赛</a><img src="./images/2db/new.png" alt="new"></li> -->
+                    <!--<li><a href="http://www.ireader.com/index.php?ca=Activity_Comic.index&pca=bookdetail.index" target="_blank">征稿</a></li>-->
+                    <!-- <li><a href="" target="_blank">下载</a></li> -->
+                </ul>
+                <div class="n1_search">
+                    <form method="get" action="http://www.ireader.com/index.php?ca=search.index&amp;pca=bookdetail.index" onsubmit="return false;" id="search_form" name="search_form">
+                    <input type="text" name="keyword" value="" placeholder="书名/作者名" autocomplete="off">
+                    <!-- class="big_search"-->
+                        <s id="btn_submit_search_form"></s>
+                    </form>
+                    <ul class="list" id="search_suggestion_box" style="display: none;"></ul>
+                </div>
+                <div class="n1_login">
+                    <a href=""><span class="n1_login_beffor" id="unlogin_box" style="display: block;">登录</span></a>
+                    <div class="n1_login_affer" id="login_box" style="display: none;">
+                        <a href="http://www.ireader.com/index.php?ca=User.Index&amp;pca=bookdetail.index"><i></i><s></s></a>
+                        <ul>
+                            <li><a href="http://www.ireader.com/index.php?ca=User.Index&amp;pca=bookdetail.index" title="我的图书"><s class="myBook"></s>我的图书</a></li>
+                            <li><a href="http://www.ireader.com/index.php?ca=Recharge_Sms.Index&amp;pca=bookdetail.index" title="充值"><s class="n1_recharge"></s>充值</a></li>
+                            <li><a href="http://www.ireader.com/index.php?ca=Passport.Logout&amp;pca=bookdetail.index" title="退出登录"><s class="quit"></s>退出</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--公共头部 结束-->
+
+
+
+
+
+<!--购买 开始-->
+<div class="buyTan" mod="buy_book">
+    <span class="off"><s></s></span>
+    <div class="howBuy">
+        <div class="howbuyL">
+            <a><img src="http://www.ireader.com/index.php?ca=bookdetail.index&amp;pca=booksort.index&amp;bid=11714934" alt="总有人在等你"></a>
+            <img src="./images/2db/shadow.gif" class="shadow">
+            <p>
+                <i class="price">价格：￥19.9</i>
+                                <i class="line">|</i>
+                <i class="orig">原价:￥29.9</i>
+                            </p>
+        </div>
+        <div class="howbuyR">
+            <h3>请下载掌阅客户端购买</h3>
+            <div>
+                <img src="./images/2db/buyTanPh.jpg" alt="扫一扫" class="buyTanPh">
+                <span class="buyTanEwm">
+                    <img src="./images/2db/er.jpg" alt="扫一扫" style="height: 125px;width: 125px;margin: -6px;">
+                </span>
+            </div>
+            <p>目前 www.iReader.com 支持在线试读，如需购买请下载掌阅手机客户端。</p>
+        </div>
+    </div>
+</div>
+<!--购买 结束-->
+
+<!--用手机看 结束-->
+<div class="howLook" mod="sao_step">
+    <h3>即刻使用手机阅读</h3>
+    <ul>
+        <li>
+            <img src="./images/2db/howLook01.jpg" alt="第1步">
+            <span>第1步</span>
+            <p>打开树阅客户端，</p>
+            <p>点击右上角搜索图标</p>
+        </li>
+        <li class="step02">
+            <img src="./images/2db/howLook02.jpg" alt="第2步">
+            <span>第2步</span>
+            <p>点击搜索框中右侧的</p>
+            <p>扫描图标</p>
+        </li>
+        <li>
+            <div style="background: url(//web.static.zhangyue01.com/zypc/static/images/sjxq/howLook03.jpg) no-repeat; width: 214px; height: 118px;">
+                <img alt="第3步" src="./images/2db/er.jpg" style="width: 110px; margin-left: 55px; background-color: white; height: 110px; position: relative; top: 4px;">
+            </div>
+            <span>第3步</span>
+            <p>扫描二维码</p>
+        </li>
+    </ul>
+</div>
+<!--用手机看 结束-->
+<!--发表 开始-->
+<div class="pubTan" style="display: none;" id="tmp_comment_form">
+    <input type="hidden" name="comment_vote" value="0">
+    <div class="tanTop">
+        <span class="dis disCur" name="comment_type" data-value="topic">发讨论<s></s></span>
+        <span class="com" name="comment_type" data-value="comment" style="display: none;">写书评<s></s></span>
+        <s class="off"></s>
+    </div>
+    <div class="tanCon">
+        <span class="headPic"><img src="http://www.ireader.com/index.php?ca=bookdetail.index&amp;pca=booksort.index&amp;bid=11714934" alt=""></span>
+        <div class="tanConR">
+            <div class="comStar" mod="comment_vote" style="display: none;" data-star="//web.static.zhangyue01.com/zypc/static/images/sjxq/(star).png">
+                <img src="./images/2db/gStar.png" alt="1星">
+                <img src="./images/2db/gStar.png" alt="2星">
+                <img src="./images/2db/gStar.png" alt="3星">
+                <img src="./images/2db/gStar.png" alt="4星">
+                <img src="./images/2db/gStar.png" alt="5星">
+            </div>
+                    <div class="tanTxtBox" onclick="if( $(&#39;.tanTxt&#39;).val() ==&#39;&#39;) { $(&#39;.tip&#39;).css(&#39;display&#39;,&#39;none&#39;);$(&#39;.tanTxt&#39;).focus();}">
+                <div class="tip">
+                    <p>建议讨论：</p>
+                    <p>写与这本书有关的呗</p>
+                    <p>友好的讨论情节、人物设置等等，不要骂人~~</p>
+                    <p>其他你想说的</p>
+                </div>
+                <textarea onfocus="if( $(this).val() ==&#39;&#39;) { $(&#39;.tip&#39;).css(&#39;display&#39;,&#39;none&#39;);}" onblur="if($(this).val() ==&#39;&#39;)  { $(&#39;.tip&#39;).css(&#39;display&#39;,&#39;block&#39;);}" class="tanTxt" name="comment_txt" style="resize:none;overflow:hidden;"></textarea>
+            </div>
+                        <div class="tanConB">
+                            <span class="remind" style="display: none;"><s></s><i></i></span>
+                <span class="pub" name="comment_submit">发表</span>
+            </div>
+        </div>
+    </div>
+</div>
+<!--发表 结束-->
+
+<!--书籍内容 开始-->
+<div class="content">
+
+    <div class="bookInfor">
+        <div class="bookL">
+            <s>言情小说</s>
+            <a>
+                <img src="./images/2db/CmQUNlvAYwmES0OtAAAAAG7RtN8281437090.jpg" alt="总有人在等你" title="总有人在等你">
+            </a>
+            <img src="./images/2db/shadow.gif" alt="" class="shadow">
+        </div>
+        <div class="bookR">
+                    <div class="bookinf01">
+                <div class="bookname">
+                    <h2><a>总有人在等你</a></h2>
+                    <span>9.0</span>                </div>
+                <p>
+                    <span class="author" style="margin-right: 12px;">作者：乌云冉冉</span>
+                    <span style="margin-right: 12px;">字数：20.3万字</span>
+		                                            <span>出版社：中国友谊出版公司</span>
+                                        <span class="manyMan">239人评分</span>                </p>
+            </div>
+            <div class="bookinf02">
+                <div class="left">
+                    <p>
+                        <i class="price">价格：￥19.9</i>
+                                                <i class="line">|</i>
+                        <i class="orig">原价：￥29.9</i>
+                                            </p>
+                                                            <a href="http://www.ireader.com/index.php?ca=Chapter.Index&amp;pca=bookdetail.index&amp;bid=11714934&amp;cid=1" target="_blank"><span class="tryRead">免费试读</span></a>
+                                        <span class="buyBook" btn="buy_book">购买</span>
+                                    </div>
+                <div class="right">
+					<span class="look_phone" mod="look_phone_pic">
+						<img src="./images/2db/look_phone.jpg" alt="扫一扫">
+					</span>
+					<span class="look_ewm" mod="look_phone_pic">
+						<img src="./images/2db/er.jpg" alt="扫一扫" style="height: 119px;width: 119px; margin-left: -21px;margin-top:-17px;">
+					</span>
+                </div>
+            </div>
+            <div class="bookinf03">
+                <p class="">
+                    华语文坛深度治愈系作家乌云冉冉蛰伏三年之作，中国版《当你沉睡时》。她是静安、是小浮、也是星辰。他是秦悦、是朝阳、也是慕时。一次突发的意外，她和他的世界分崩离析；随之而来，等待二人的是一场奇妙的爱情之旅……繁华浮世间，她（他）寻他（她）于万水千山中；她：你可知，踏遍千山万水，我只为你而来？他：你可知，穷尽一生力气，我也只为了一个你？当一种名为“爱情”的化学物质流进他和她的故事里，那个，藏在深蓝色时空深处的小秘密也开始悄然揭开……                </p>
+                <div class="shareWrap">
+                    <div class="share" style="display: none;">
+                        <a href="javascript:;" class="weibo">
+                            <img src="./images/2db/weibo.png" _hover_src="//web.static.zhangyue01.com/zypc/static/images/rank/weiboHov.png" alt="weibo">
+                        </a>
+                        <a href="javascript:;">
+                            <img src="./images/2db/qq.png" _hover_src="//web.static.zhangyue01.com/zypc/static/images/rank/qqHov.png" alt="qq">
+                        </a>
+                    </div>
+                                        <span><a href="javascript:;" btn="desc_show_more" class="">展开<s></s></a></span>
+                                    </div>
+            </div>
+        </div>
+    </div>
+
+    <!--书圈 开始-->
+    <div class="sqCon"  data-100-bottom-top="transform: translateX(-200px); opacity: 0" data-center-top="transform: translateX(0px); opacity: 1">
+        <div class="bookCir">
+            <div class="title">
+                <p>
+                    <span class="shuquan">书圈</span>
+                                    <span class="line">|</span>
+                    <span>共12890人，758条</span>
+                                </p>
+                                <a href="javascript:;" class="comBtn" btn="topic_add" data-has_fu_text="0" data-cid="book_11714934">
+                    <s></s>
+                    <span>我来说两句</span>
+                </a>
+                            </div>
+
+            <div class="allCom" style="display: block;">
+                <ul>
+                                <li>
+                        <span class="headImg">
+                            <img src="./images/2db/40" alt="eva">
+                        </span>
+                        <div class="allCom">
+                            <div class="ComMan">
+                                <p>eva</p>
+                                <span class="lv">LV19</span>
+                                                                <span>2019-01-27</span>
+                            </div>
+                                                    <div class="disTxt">
+                                <span>
+                                    <s>讨论</s>
+                                    <i><a href="http://www.ireader.com/index.php?ca=Sns_Topic.Comment&amp;pca=bookdetail.index&amp;cid=book_11714934&amp;tid=141259886" target="_blank">35-19=16，是差了16岁好不好啊！！！！让我想起了法国总理马克龙。</a></i>
+                                                                </span>
+                                                        </div>
+                            <div class="attend">
+                                <a href="javascript:;" btn="like" data-num="0" data-liked="0" data-tid="141259886" data-cid="book_11714934" class="zan click">
+                                    <!--<s class="zan"></s>-->
+                                    <img src="./images/2db/zan.gif" alt="赞">
+                                    <i>&nbsp;</i>
+                                </a>
+                                <span class="line"></span>
+                                <a href="http://www.ireader.com/index.php?ca=Sns_Topic.Comment&amp;pca=bookdetail.index&amp;cid=book_11714934&amp;tid=141259886" class="huifu" target="_blank">
+                                    <img src="./images/2db/zan.gif" alt="回复">
+                                    <i>1</i>
+                                </a>
+                                <span class="up" btn="content_hide_more" style="display: none;"><i>收起</i><s></s></span>
+                            </div>
+                        </div>
+                    </li>
+                                <li>
+                        <span class="headImg">
+                            <img src="./images/2db/CmQUN1oQytOEBbW-AAAAAJEKP2Y825525667.jpg" alt="远方">
+                        </span>
+                        <div class="allCom">
+                            <div class="ComMan">
+                                <p>远方</p>
+                                <span class="lv">LV21</span>
+                                <span class="vip">VIP</span>                                <span>2018-12-12</span>
+                            </div>
+                                                    <div class="ComStar">
+                                                            <img src="./images/2db/yStar.png">
+                                                            <img src="./images/2db/yStar.png">
+                                                            <img src="./images/2db/yStar.png">
+                                                            <img src="./images/2db/yStar.png">
+                                                            <img src="./images/2db/yStar.png">
+                                                        </div>
+                                                    <div class="comTxt">
+                                <span>
+                                    <s>书评</s>
+                                    <i><a href="http://www.ireader.com/index.php?ca=Sns_Topic.Comment&amp;pca=bookdetail.index&amp;cid=book_11714934&amp;tid=138007426" target="_blank">不可思议，一直觉得女主强大，在和男主相爱的时候突然被换身份还能继续活下去，不管是秦还是陆，不过还好最后原来一直都是对的那个人</a></i>
+                                                                </span>
+                                                        </div>
+                            <div class="attend">
+                                <a href="javascript:;" btn="like" data-num="1" data-liked="0" data-tid="138007426" data-cid="book_11714934" class="zan click">
+                                    <!--<s class="zan"></s>-->
+                                    <img src="./images/2db/zan.gif" alt="赞">
+                                    <i>1</i>
+                                </a>
+                                <span class="line"></span>
+                                <a href="http://www.ireader.com/index.php?ca=Sns_Topic.Comment&amp;pca=bookdetail.index&amp;cid=book_11714934&amp;tid=138007426" class="huifu" target="_blank">
+                                    <img src="./images/2db/zan.gif" alt="回复">
+                                    <i>1</i>
+                                </a>
+                                <span class="up" btn="content_hide_more" style="display: none;"><i>收起</i><s></s></span>
+                            </div>
+                        </div>
+                    </li>
+                                <li>
+                        <span class="headImg">
+                            <img src="./images/2db/40(1)" alt="随意">
+                        </span>
+                        <div class="allCom">
+                            <div class="ComMan">
+                                <p>随意</p>
+                                <span class="lv">LV17</span>
+                                                                <span>2018-11-24</span>
+                            </div>
+                                                    <div class="ComStar">
+                                                            <img src="./images/2db/yStar.png">
+                                                            <img src="./images/2db/yStar.png">
+                                                            <img src="./images/2db/yStar.png">
+                                                            <img src="./images/2db/yStar.png">
+                                                            <img src="./images/2db/yStar.png">
+                                                        </div>
+                                                    <div class="comTxt">
+                                <span>
+                                    <s>书评</s>
+                                    <i><a href="http://www.ireader.com/index.php?ca=Sns_Topic.Comment&amp;pca=bookdetail.index&amp;cid=book_11714934&amp;tid=136830240" target="_blank">兜兜转转还是你，不管生生世世有情人终能在一起，圆满的结局让揪紧的心突然放松，超喜欢女主总能从困境转为引人眼球的个性女子！</a></i>
+                                                                </span>
+                                                        </div>
+                            <div class="attend">
+                                <a href="javascript:;" btn="like" data-num="26" data-liked="0" data-tid="136830240" data-cid="book_11714934" class="zan click">
+                                    <!--<s class="zan"></s>-->
+                                    <img src="./images/2db/zan.gif" alt="赞">
+                                    <i>26</i>
+                                </a>
+                                <span class="line"></span>
+                                <a href="http://www.ireader.com/index.php?ca=Sns_Topic.Comment&amp;pca=bookdetail.index&amp;cid=book_11714934&amp;tid=136830240" class="huifu" target="_blank">
+                                    <img src="./images/2db/zan.gif" alt="回复">
+                                    <i>2</i>
+                                </a>
+                                <span class="up" btn="content_hide_more" style="display: none;"><i>收起</i><s></s></span>
+                            </div>
+                        </div>
+                    </li>
+                                <li>
+                        <span class="headImg">
+                            <img src="./images/2db/40(2)" alt="Alice丶未央">
+                        </span>
+                        <div class="allCom">
+                            <div class="ComMan">
+                                <p>Alice丶未央</p>
+                                <span class="lv">LV13</span>
+                                                                <span>2018-11-14</span>
+                            </div>
+                                                    <div class="ComStar">
+                                                            <img src="./images/2db/yStar.png">
+                                                            <img src="./images/2db/yStar.png">
+                                                            <img src="./images/2db/yStar.png">
+                                                            <img src="./images/2db/yStar.png">
+                                                            <img src="./images/2db/yStar.png">
+                                                        </div>
+                                                    <div class="comTxt">
+                                <span>
+                                    <s>书评</s>
+                                    <i><a href="http://www.ireader.com/index.php?ca=Sns_Topic.Comment&amp;pca=bookdetail.index&amp;cid=book_11714934&amp;tid=136170138" target="_blank">人生匆匆几十年，正常夫妻在一起的时间也不过如此，我们却可以生生世世在一起’，我伸手勾住他的脖子，在碰上他的唇之前告诉他：“因为有个人偷偷潜入我的梦，偷走我的心，还傻傻地留下了他的名字</a></i>
+                                                                </span>
+                                                        </div>
+                            <div class="attend">
+                                <a href="javascript:;" btn="like" data-num="9" data-liked="0" data-tid="136170138" data-cid="book_11714934" class="zan click">
+                                    <!--<s class="zan"></s>-->
+                                    <img src="./images/2db/zan.gif" alt="赞">
+                                    <i>9</i>
+                                </a>
+                                <span class="line"></span>
+                                <a href="http://www.ireader.com/index.php?ca=Sns_Topic.Comment&amp;pca=bookdetail.index&amp;cid=book_11714934&amp;tid=136170138" class="huifu" target="_blank">
+                                    <img src="./images/2db/zan.gif" alt="回复">
+                                    <i>&nbsp;</i>
+                                </a>
+                                <span class="up" btn="content_hide_more" style="display: none;"><i>收起</i><s></s></span>
+                            </div>
+                        </div>
+                    </li>
+                                <li>
+                        <span class="headImg">
+                            <img src="./images/2db/CmRaIVrAXq2EYDNtAAAAAIWq7uw221186863.png" alt="似水无痕">
+                        </span>
+                        <div class="allCom">
+                            <div class="ComMan">
+                                <p>似水无痕</p>
+                                <span class="lv">LV12</span>
+                                <span class="vip">VIP</span>                                <span>2018-10-31</span>
+                            </div>
+                                                    <div class="ComStar">
+                                                            <img src="./images/2db/yStar.png">
+                                                            <img src="./images/2db/yStar.png">
+                                                            <img src="./images/2db/yStar.png">
+                                                            <img src="./images/2db/gStar.png">
+                                                            <img src="./images/2db/gStar.png">
+                                                        </div>
+                                                    <div class="comTxt">
+                                <span>
+                                    <s>书评</s>
+                                    <i><a href="http://www.ireader.com/index.php?ca=Sns_Topic.Comment&amp;pca=bookdetail.index&amp;cid=book_11714934&amp;tid=135339084" target="_blank">我觉得这本书打着梦境中寻究爱情本质的外观却有着快穿的本质只是少了系统和攻略目标。同一对人，不同的年龄身份地位，每一次没不相识到相恋再到分别、适应另一个生活，更残酷的是同一个世界看着自己曾经的生活继续曾...</a></i>
+                                                                    <a href="javascript:;" class="whole" btn="content_show_more">展开全部</a>
+                                    <i style="display: none;"><a href="http://www.ireader.com/index.php?ca=Sns_Topic.Comment&amp;pca=bookdetail.index&amp;cid=book_11714934&amp;tid=135339084" target="_blank"></a></i>
+                                    <textarea style="display: none;">我觉得这本书打着梦境中寻究爱情本质的外观却有着快穿的本质只是少了系统和攻略目标。同一对人，不同的年龄身份地位，每一次没不相识到相恋再到分别、适应另一个生活，更残酷的是同一个世界看着自己曾经的生活继续曾经的结局....终于，曾经的难以言说和倔强、不肯先说和故作坚强都在重遇对的人时抛开，最后，祝有情人终成眷属。</textarea>
+                                                                </span>
+                                                        </div>
+                            <div class="attend">
+                                <a href="javascript:;" btn="like" data-num="44" data-liked="0" data-tid="135339084" data-cid="book_11714934" class="zan click">
+                                    <!--<s class="zan"></s>-->
+                                    <img src="./images/2db/zan.gif" alt="赞">
+                                    <i>44</i>
+                                </a>
+                                <span class="line"></span>
+                                <a href="http://www.ireader.com/index.php?ca=Sns_Topic.Comment&amp;pca=bookdetail.index&amp;cid=book_11714934&amp;tid=135339084" class="huifu" target="_blank">
+                                    <img src="./images/2db/hf.gif" alt="回复">
+                                    <i>2</i>
+                                </a>
+                                <span class="up" btn="content_hide_more" style="display: none;"><i>收起</i><s></s></span>
+                            </div>
+                        </div>
+                    </li>
+                                <li>
+                        <span class="headImg">
+                            <img src="./images/2db/40(2)" alt="139****4024">
+                        </span>
+                        <div class="allCom">
+                            <div class="ComMan">
+                                <p>139****4024</p>
+                                <span class="lv">LV15</span>
+                                <span>2018-11-01</span>
+                            </div>
+                                <div class="disTxt">
+                                <span>
+                                    <s>讨论</s>
+                                    <i><a href="http://www.ireader.com/index.php?ca=Sns_Topic.Comment&amp;pca=bookdetail.index&amp;cid=book_11714934&amp;tid=135398291" target="_blank">这么一说，女主很能干了。能当医生，排舞蹈，写书，无论如何不会饿死</a></i>
+                                                                </span>
+                                                        </div>
+                            <div class="attend">
+                                <a href="javascript:;" btn="like" data-num="4" data-liked="0" data-tid="135398291" data-cid="book_11714934" class="zan click">
+                                    <!--<s class="zan"></s>-->
+                                    <img src="./images/2db/zan.gif" alt="赞">
+                                    <i>4</i>
+                                </a>
+                                <span class="line"></span>
+                                <a href="http://www.ireader.com/index.php?ca=Sns_Topic.Comment&amp;pca=bookdetail.index&amp;cid=book_11714934&amp;tid=135398291" class="huifu" target="_blank">
+                                    <img src="./images/2db/hf.gif" alt="回复">
+                                    <i>1</i>
+                                </a>
+                                <span class="up" btn="content_hide_more" style="display: none;"><i>收起</i><s></s></span>
+                            </div>
+                        </div>
+                    </li>
+                                <li>
+                        <span class="headImg">
+                            <img src="./images/2db/CmQUN1oQytOEBbW-AAAAAJEKP2Y825525667.jpg" alt="158****6912">
+                        </span>
+                        <div class="allCom">
+                            <div class="ComMan">
+                                <p>158****6912</p>
+                                <span class="lv">LV11</span>
+                                                                <span>2018-10-31</span>
+                            </div>
+                                                    <div class="disTxt">
+                                <span>
+                                    <s>讨论</s>
+                                    <i><a href="http://www.ireader.com/index.php?ca=Sns_Topic.Comment&amp;pca=bookdetail.index&amp;cid=book_11714934&amp;tid=135335973" target="_blank">我前几天也遇见了我以前的男神，二年没见真是吓一跳，满头白发，啤酒肚，烟薰的黄牙，原来岁月这把杀猪刀对谁都公平的，现在我觉得还是我家孩子爹受看[呲牙][呲牙][呲牙]</a></i>
+                                                                </span>
+                                                        </div>
+                            <div class="attend">
+                                <a href="javascript:;" btn="like" data-num="11" data-liked="0" data-tid="135335973" data-cid="book_11714934" class="zan click">
+                                    <!--<s class="zan"></s>-->
+                                    <img src="./images/2db/zan.gif" alt="赞">
+                                    <i>11</i>
+                                </a>
+                                <span class="line"></span>
+                                <a href="http://www.ireader.com/index.php?ca=Sns_Topic.Comment&amp;pca=bookdetail.index&amp;cid=book_11714934&amp;tid=135335973" class="huifu" target="_blank">
+                                    <img src="./images/2db/hf.gif" alt="回复">
+                                    <i>1</i>
+                                </a>
+                                <span class="up" btn="content_hide_more" style="display: none;"><i>收起</i><s></s></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="headImg">
+                            <img src="./images/2db/40(3)" alt="℡芳芳╪ぁ">
+                        </span>
+                        <div class="allCom">
+                            <div class="ComMan">
+                                <p>℡芳芳╪ぁ</p>
+                                <span class="lv">LV21</span>
+                                                                <span>2018-11-01</span>
+                            </div>
+                                                    <div class="disTxt">
+                                <span>
+                                    <s>讨论</s>
+                                    <i><a href="http://www.ireader.com/index.php?ca=Sns_Topic.Comment&amp;pca=bookdetail.index&amp;cid=book_11714934&amp;tid=135417005" target="_blank">看的有点晕，一开始不是排练节目吗？怎么又是医生了？</a></i>
+                                                                </span>
+                                                        </div>
+                            <div class="attend">
+                                <a href="javascript:;" btn="like" data-num="5" data-liked="0" data-tid="135417005" data-cid="book_11714934" class="zan click">
+                                    <!--<s class="zan"></s>-->
+                                    <img src="./images/2db/zan.gif" alt="赞">
+                                    <i>5</i>
+                                </a>
+                                <span class="line"></span>
+                                <a href="http://www.ireader.com/index.php?ca=Sns_Topic.Comment&amp;pca=bookdetail.index&amp;cid=book_11714934&amp;tid=135417005" class="huifu" target="_blank">
+                                    <img src="./images/2db/hf.gif" alt="回复">
+                                    <i>2</i>
+                                </a>
+                                <span class="up" btn="content_hide_more" style="display: none;"><i>收起</i><s></s></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="headImg">
+                            <img src="./images/2db/40(3)" alt="℡芳芳╪ぁ">
+                        </span>
+                        <div class="allCom">
+                            <div class="ComMan">
+                                <p>℡芳芳╪ぁ</p>
+                                <span class="lv">LV21</span>
+                                                                <span>2018-11-01</span>
+                            </div>
+                                                    <div class="disTxt">
+                                <span>
+                                    <s>讨论</s>
+                                    <i><a href="http://www.ireader.com/index.php?ca=Sns_Topic.Comment&amp;pca=bookdetail.index&amp;cid=book_11714934&amp;tid=135417005" target="_blank">看的有点晕，一开始不是排练节目吗？怎么又是医生了？</a></i>
+                                                                </span>
+                                                        </div>
+                            <div class="attend">
+                                <a href="javascript:;" btn="like" data-num="5" data-liked="0" data-tid="135417005" data-cid="book_11714934" class="zan click">
+                                    <!--<s class="zan"></s>-->
+                                    <img src="./images/2db/zan.gif" alt="赞">
+                                    <i>5</i>
+                                </a>
+                                <span class="line"></span>
+                                <a href="http://www.ireader.com/index.php?ca=Sns_Topic.Comment&amp;pca=bookdetail.index&amp;cid=book_11714934&amp;tid=135417005" class="huifu" target="_blank">
+                                    <img src="./images/2db/hf.gif" alt="回复">
+                                    <i>2</i>
+                                </a>
+                                <span class="up" btn="content_hide_more" style="display: none;"><i>收起</i><s></s></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="headImg">
+                            <img src="./images/2db/40(3)" alt="℡芳芳╪ぁ">
+                        </span>
+                        <div class="allCom">
+                            <div class="ComMan">
+                                <p>℡芳芳╪ぁ</p>
+                                <span class="lv">LV21</span>
+                                                                <span>2018-11-01</span>
+                            </div>
+                                                    <div class="disTxt">
+                                <span>
+                                    <s>讨论</s>
+                                    <i><a href="http://www.ireader.com/index.php?ca=Sns_Topic.Comment&amp;pca=bookdetail.index&amp;cid=book_11714934&amp;tid=135417005" target="_blank">看的有点晕，一开始不是排练节目吗？怎么又是医生了？</a></i>
+                                                                </span>
+                                                        </div>
+                            <div class="attend">
+                                <a href="javascript:;" btn="like" data-num="5" data-liked="0" data-tid="135417005" data-cid="book_11714934" class="zan click">
+                                    <!--<s class="zan"></s>-->
+                                    <img src="./images/2db/zan.gif" alt="赞">
+                                    <i>5</i>
+                                </a>
+                                <span class="line"></span>
+                                <a href="http://www.ireader.com/index.php?ca=Sns_Topic.Comment&amp;pca=bookdetail.index&amp;cid=book_11714934&amp;tid=135417005" class="huifu" target="_blank">
+                                    <img src="./images/2db/hf.gif" alt="回复">
+                                    <i>2</i>
+                                </a>
+                                <span class="up" btn="content_hide_more" style="display: none;"><i>收起</i><s></s></span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="load">
+                    <p class="loadMore"><a href="javascript:;" btn="desc_show_more">查看更多</a></p>
+                    <!--<p class="loading"><s></s>加载更多...</p>-->
+                </div>
+            </div>
+
+        </div>
+
+        <!--右侧内容 开始-->
+        <div class="conR">
+                    <div class="seen">
+                <div class="seeTit">
+                    <span class="title">看过的人还看</span>
+                                    </div>
+                <div class="seeWrap" mod="relate_book_list">
+                    <ul>
+                                                <li>                            <a href="" target="_blank">
+                                <img src="./images/2db/CmQUN1urP3aEBd8cAAAAACyD0Js553419466.jpg" alt="云边有个小卖部">
+                            </a>
+                            <p class="bookNume">
+                                <a href="" target="_blank">云边有个小卖部</a>
+                            </p>
+                            <p class="author">张嘉佳</p>
+                            <span><s></s>23</span>
+                                                                                                        <a href="http://www.ireader.com/index.php?ca=bookdetail.index&amp;pca=bookdetail.index&amp;bid=10907983" target="_blank">
+                                <img src="./images/2db/CmQUN1jdBmmEBmKZAAAAANFNadc019367868.jpg" alt="簪中录合集">
+                            </a>
+                            <p class="bookNume">
+                                <a href="">簪中录合集</a>
+                            </p>
+                            <p class="author">侧侧轻寒</p>
+                            <span><s></s>142</span>
+                            </li>                                                <li>                            <a href="">
+                                <img src="./images/2db/CmRae1uE7LyESI0gAAAAAKL40E0172594450.jpg" alt="金庸作品集（纯文字版）">
+                            </a>
+                            <p class="bookNume">
+                                <a href="">金庸作品集（纯文字版）</a>
+                            </p>
+                            <p class="author">金庸</p>
+                            <span><s></s>42</span>
+                                                                                                        <a href="http://www.ireader.com/index.php?ca=bookdetail.index&amp;pca=bookdetail.index&amp;bid=11686909" target="_blank">
+                                <img src="./images/2db/CmRaeltZnZqEBtAmAAAAAIFMizE585527357.jpg" alt="半小时漫画中国史3">
+                            </a>
+                            <p class="bookNume">
+                                <a href="">半小时漫画中国史3</a>
+                            </p>
+                            <p class="author">陈磊（笔名：二混子）</p>
+                            <span><s></s>9</span>
+                            </li>                                            </ul>
+                </div>
+            </div>
+        
+                    <div class="showRight">
+                <h3>同类热销榜</h3>
+                <ul>
+                                    <li class="onShow" onmouseover="$(this).addClass(&#39;onShow&#39;).siblings().removeClass(&#39;onShow&#39;);">
+                        <dl class="close">
+                            <dt>1</dt>
+                            <dd>
+                                <span class="bookName">
+                                    <a href="" title="簪中录合集">簪中录合集</a>
+                                </span>
+                                <span class="num"><s></s>712</span>
+                            </dd>
+                        </dl>
+                        <dl class="open">
+                            <dt>1</dt>
+                            <dd>
+                                <div>
+                                    <span class="bookPic">
+                                        <a href="" target="_blank" title="簪中录合集">
+                                            <img src="./images/2db/CmQUN1jdBmmEBmKZAAAAANFNadc019367868.jpg" alt="簪中录合集">
+                                        </a>
+                                    </span>
+                                    <div class="bookCon">
+                                        <p><a href="" target="_blank" title="簪中录合集">簪中录合集</a></p>
+                                        <span class="num"><s></s>712</span>
+                                    </div>
+                                </div>
+                            </dd>
+                        </dl>
+                    </li>
+                                    <li onmouseover="$(this).addClass(&#39;onShow&#39;).siblings().removeClass(&#39;onShow&#39;);">
+                        <dl class="close">
+                            <dt>2</dt>
+                            <dd>
+                                <span class="bookName">
+                                    <a href="" target="_blank" title="致我们暖暖的小时光[精品]">致我们暖暖的小时光[精品]</a>
+                                </span>
+                                <span class="num"><s></s>1447</span>
+                            </dd>
+                        </dl>
+                        <dl class="open">
+                            <dt>2</dt>
+                            <dd>
+                                <div>
+                                    <span class="bookPic">
+                                        <a href="" target="_blank" title="致我们暖暖的小时光[精品]">
+                                            <img src="./images/2db/CmQUOFnMe8mERIgyAAAAAIfSy_E873257506.jpg" alt="致我们暖暖的小时光[精品]">
+                                        </a>
+                                    </span>
+                                    <div class="bookCon">
+                                        <p><a href="" target="_blank" title="致我们暖暖的小时光[精品]">致我们暖暖的小时光[精品]</a></p>
+                                        <span class="num"><s></s>1447</span>
+                                    </div>
+                                </div>
+                            </dd>
+                        </dl>
+                    </li>
+                                    <li onmouseover="$(this).addClass(&#39;onShow&#39;).siblings().removeClass(&#39;onShow&#39;);">
+                        <dl class="close">
+                            <dt>3</dt>
+                            <dd>
+                                <span class="bookName">
+                                    <a href="" target="_blank" title="如果可以这样爱（全2册）[精品]">如果可以这样爱（全2册）[精品]</a>
+                                </span>
+                                <span class="num"><s></s>1177</span>
+                            </dd>
+                        </dl>
+                        <dl class="open">
+                            <dt>3</dt>
+                            <dd>
+                                <div>
+                                    <span class="bookPic">
+                                        <a href="" target="_blank" title="如果可以这样爱（全2册）[精品]">
+                                            <img src="./images/2db/CmQUOVg4EfKEKrTgAAAAAN-9fWM197747333.jpg" alt="如果可以这样爱（全2册）[精品]">
+                                        </a>
+                                    </span>
+                                    <div class="bookCon">
+                                        <p><a href="" target="_blank" title="如果可以这样爱（全2册）[精品]">如果可以这样爱（全2册）[精品]</a></p>
+                                        <span class="num"><s></s>1177</span>
+                                    </div>
+                                </div>
+                            </dd>
+                        </dl>
+                    </li>
+                                    <li onmouseover="$(this).addClass(&#39;onShow&#39;).siblings().removeClass(&#39;onShow&#39;);">
+                        <dl class="close">
+                            <dt>4</dt>
+                            <dd>
+                                <span class="bookName">
+                                    <a href="" target="_blank" title="嫤语书年">嫤语书年</a>
+                                </span>
+                                <span class="num"><s></s>194</span>
+                            </dd>
+                        </dl>
+                        <dl class="open">
+                            <dt>4</dt>
+                            <dd>
+                                <div>
+                                    <span class="bookPic">
+                                        <a href="" target="_blank" title="嫤语书年">
+                                            <img src="./images/2db/CmQUN1X2dvGEI7aGAAAAALDImm4901428918.jpg" alt="嫤语书年">
+                                        </a>
+                                    </span>
+                                    <div class="bookCon">
+                                        <p><a href="" target="_blank" title="嫤语书年">嫤语书年</a></p>
+                                        <span class="num"><s></s>194</span>
+                                    </div>
+                                </div>
+                            </dd>
+                        </dl>
+                    </li>
+                                    <li onmouseover="$(this).addClass(&#39;onShow&#39;).siblings().removeClass(&#39;onShow&#39;);">
+                        <dl class="close">
+                            <dt>5</dt>
+                            <dd>
+                                <span class="bookName">
+                                    <a href="" target="_blank" title="季凉川爱了你这么多年（全四册）">季凉川爱了你这么多年（全四册）</a>
+                                </span>
+                                <span class="num"><s></s>198</span>
+                            </dd>
+                        </dl>
+                        <dl class="open">
+                            <dt>5</dt>
+                            <dd>
+                                <div>
+                                    <span class="bookPic">
+                                        <a href="" target="_blank" title="季凉川爱了你这么多年（全四册）">
+                                            <img src="./images/2db/CmQUNltr9r-EUtVIAAAAAG-wIQw719894233.jpg" alt="季凉川爱了你这么多年（全四册）">
+                                        </a>
+                                    </span>
+                                    <div class="bookCon">
+                                        <p><a href="" target="_blank" title="季凉川爱了你这么多年（全四册）">季凉川爱了你这么多年（全四册）</a></p>
+                                        <span class="num"><s></s>198</span>
+                                    </div>
+                                </div>
+                            </dd>
+                        </dl>
+                    </li>
+                                    <li onmouseover="$(this).addClass(&#39;onShow&#39;).siblings().removeClass(&#39;onShow&#39;);">
+                        <dl class="close">
+                            <dt>6</dt>
+                            <dd>
+                                <span class="bookName">
+                                    <a href="" target="_blank" title="摘星合集无删减版">摘星合集无删减版</a>
+                                </span>
+                                <span class="num"><s></s>76</span>
+                            </dd>
+                        </dl>
+                        <dl class="open">
+                            <dt>6</dt>
+                            <dd>
+                                <div>
+                                    <span class="bookPic">
+                                        <a href="" target="_blank" title="摘星合集无删减版">
+                                            <img src="./images/2db/CmQUNljdJSCESTLRAAAAAJAg-6Y352585948.jpg" alt="摘星合集无删减版">
+                                        </a>
+                                    </span>
+                                    <div class="bookCon">
+                                        <p><a href="" target="_blank" title="摘星合集无删减版">摘星合集无删减版</a></p>
+                                        <span class="num"><s></s>76</span>
+                                    </div>
+                                </div>
+                            </dd>
+                        </dl>
+                    </li>
+                                    <li onmouseover="$(this).addClass(&#39;onShow&#39;).siblings().removeClass(&#39;onShow&#39;);">
+                        <dl class="close">
+                            <dt>7</dt>
+                            <dd>
+                                <span class="bookName">
+                                    <a href="" target="_blank" title="公主与骑士[精品]">公主与骑士[精品]</a>
+                                </span>
+                                <span class="num"><s></s>104</span>
+                            </dd>
+                        </dl>
+                        <dl class="open">
+                            <dt>7</dt>
+                            <dd>
+                                <div>
+                                    <span class="bookPic">
+                                        <a href="" target="_blank" title="公主与骑士[精品]">
+                                            <img src="./images/2db/CmQUOFyZ7IaEZz7LAAAAANArG5M771205533.jpg" alt="公主与骑士[精品]">
+                                        </a>
+                                    </span>
+                                    <div class="bookCon">
+                                        <p><a href="" target="_blank" title="公主与骑士[精品]">公主与骑士[精品]</a></p>
+                                        <span class="num"><s></s>104</span>
+                                    </div>
+                                </div>
+                            </dd>
+                        </dl>
+                    </li>
+                                    <li onmouseover="$(this).addClass(&#39;onShow&#39;).siblings().removeClass(&#39;onShow&#39;);">
+                        <dl class="close">
+                            <dt>8</dt>
+                            <dd>
+                                <span class="bookName">
+                                    <a href="" target="_blank" title="清宫谋（全3册）-莲静竹衣">清宫谋（全3册）-莲静竹衣</a>
+                                </span>
+                                <span class="num"><s></s>688</span>
+                            </dd>
+                        </dl>
+                        <dl class="open">
+                            <dt>8</dt>
+                            <dd>
+                                <div>
+                                    <span class="bookPic">
+                                        <a href="" target="_blank" title="清宫谋（全3册）-莲静竹衣">
+                                            <img src="./images/2db/CmRaelr5Kl2ENyivAAAAAKDbrCo588391092.jpg" alt="清宫谋（全3册）-莲静竹衣">
+                                        </a>
+                                    </span>
+                                    <div class="bookCon">
+                                        <p><a href="" target="_blank" title="清宫谋（全3册）-莲静竹衣">清宫谋（全3册）-莲静竹衣</a></p>
+                                        <span class="num"><s></s>688</span>
+                                    </div>
+                                </div>
+                            </dd>
+                        </dl>
+                    </li>
+                                    <li onmouseover="$(this).addClass(&#39;onShow&#39;).siblings().removeClass(&#39;onShow&#39;);">
+                        <dl class="close">
+                            <dt>9</dt>
+                            <dd>
+                                <span class="bookName">
+                                    <a href="" target="_blank" title="康雍秘史之良妃-风咕咕">康雍秘史之良妃-风咕咕</a>
+                                </span>
+                                <span class="num"><s></s>517</span>
+                            </dd>
+                        </dl>
+                        <dl class="open">
+                            <dt>9</dt>
+                            <dd>
+                                <div>
+                                    <span class="bookPic">
+                                        <a href="" target="_blank" title="康雍秘史之良妃-风咕咕">
+                                            <img src="./images/2db/CmRae1t71aOEelGSAAAAABPF8hw475915732.jpg" alt="康雍秘史之良妃-风咕咕">
+                                        </a>
+                                    </span>
+                                    <div class="bookCon">
+                                        <p><a href="" target="_blank" title="康雍秘史之良妃-风咕咕">康雍秘史之良妃-风咕咕</a></p>
+                                        <span class="num"><s></s>517</span>
+                                    </div>
+                                </div>
+                            </dd>
+                        </dl>
+                    </li>
+                                    <li onmouseover="$(this).addClass(&#39;onShow&#39;).siblings().removeClass(&#39;onShow&#39;);">
+                        <dl class="close">
+                            <dt>10</dt>
+                            <dd>
+                                <span class="bookName">
+                                    <a href="" target="_blank" title="春莺啭-海青拿天鹅">春莺啭-海青拿天鹅</a>
+                                </span>
+                                <span class="num"><s></s>71</span>
+                            </dd>
+                        </dl>
+                        <dl class="open">
+                            <dt>10</dt>
+                            <dd>
+                                <div>
+                                    <span class="bookPic">
+                                        <a href="" target="_blank" title="春莺啭-海青拿天鹅">
+                                            <img src="./images/2db/CmQUOVw9QcWEf4DSAAAAABIWEIo906989108.jpg" alt="春莺啭-海青拿天鹅">
+                                        </a>
+                                    </span>
+                                    <div class="bookCon">
+                                        <p><a href="" target="_blank" title="春莺啭-海青拿天鹅">春莺啭-海青拿天鹅</a></p>
+                                        <span class="num"><s></s>71</span>
+                                    </div>
+                                </div>
+                            </dd>
+                        </dl>
+                    </li>
+                                </ul>
+            </div>
+        
+        </div>
+        <!--右侧内容 结束-->
+    </div>
+    <!--书圈 结束-->
+
+</div>
+<!--书籍内容 结束-->
+
+<link href="./css/2db/webuploader.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="./js/2db/webuploader.min.js"></script>
+<script type="text/javascript" src="./js/2db/layer.js"></script>
+<script type="text/javascript" src="./js/2db/book.js"></script>
+<script type="text/javascript" src="./js/2db/topic.js"></script>
+
+<script type="text/javascript">
+
+    (function () {
+        //topic.is_join = "0";
+            topic.is_join = 1;
+        topic.has_new_login_mod = true;
+        topic.has_new_form_mod = true;
+        topic.bind();
+            $('[btn]').bind('selectstart', function () {return false;});
+    })();
+</script>
+
+    
+<!--公共底部 开始-->
+<div class="v1_foot" style="margin-top: 0px;">
+    <div class="aboutcompany">
+        <p class="link">
+            <p>全本小说网是免费全本小说无弹窗阅读,书友最值得收藏的网络小说阅读网_www.qb5200.tw <br> 
+            Copyright © 2016 全本小说网(www.qb5200.tw) All Rights Reserved <br> 
+            闽ICP备16022215号-3 </p>
+        </p>
+        <p><a href="http://www.ireader.com/static/images/papers/publishing_license_2018.jpg" target="_blank">出版物经营许可证</a>京ICP备11008516号<a href="" target="_blank">网络出版服务许可证（总）网出证（京）字第141号</a><a href="http://www.ireader.com/static/images/papers/icp.jpg" target="_blank">京ICP证090653号</a><a href="" target="_blank"><img style="margin-right:5px; display:inline; vertical-align:middle; margin-top:-2px" src="./images/2db/web_record.png">京公网安备11010502030452</a></p>
+        <p>2015 All Rights Reserved 树阅科技股份有限公司 版权所有</p>
+    </div>
+</div>
+<!--公共底部 结束-->
+
+
+<!--返回顶部 结束-->
+<span class="goTop" id="btn_back_top" style="left: 1194.5px; display: none;"><img src="./images/2db/go_top.png" alt="返回顶部"></span>
+<!--返回顶部 结束-->
+
+<script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        // hm.src = "./js/2db/hm.js?2583df02aa8541db9378beae2ed00ba0";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+
+        var bp = document.createElement('script');
+        bp.src = './js/2db/push.js';
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+	<!-- here stars scrolling icon -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+				};
+			*/
+								
+			$().UItoTop({ easingType: 'easeOutQuart' });
+								
+			});
+	</script>
+	<!-- //here ends scrolling icon -->
+
+
+</body></html>
